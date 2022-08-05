@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { RxjsModuleModule } from './rxjs-module/rxjs-module.module';
+
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -13,7 +17,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RxjsModuleModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
