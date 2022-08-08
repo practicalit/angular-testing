@@ -1,1 +1,10 @@
-<p>introduction works!</p>
+<div>
+    <p class="success-message" *ngIf="(subjectObservable$ | async) > 0">
+        Success message to be shown here only when number is above 0
+    </p>
+</div>
+<div>
+    <span>Add number and hit button to trigger the observer</span>
+    <div><input [(ngModel)]="value" /></div>
+    <div><button type="button" (click)="buttonHandler()">Add Number</button></div>
+</div>

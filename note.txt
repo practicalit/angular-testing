@@ -1,0 +1,2 @@
+https://www.tektutorialshub.com/angular/subjects-in-angular/
+https://malcoded.com/posts/angular-async-pipe/
