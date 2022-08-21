@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .flex-container {
+            display: flex;
+            flex-direction: column; /* reverse-row, column reverse-column,*/
+            flex-wrap: wrap; /* nowrap, wrap-reverse*/
+            /*(main) flex-start, center, sflex-end, space-between, space-around, space-verify*/
+            justify-content: space-around;
+            /*(axis) stretch, flex-start, flex-end, center, baseline*/
+            align-items: stretch;
+        }
+        .flex-item {
+            border: 0.05px solid black;
+            align-items: auto;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 2px;
+            margin-right: 2px;
+            flex: 1 1 0px /*makes all the items equal size*/
+        }
+        .header {
+            flex-grow: 3;
+        }
+        .links {
+            display: flex;
+        }
+        .content {
+            display: flex;
+            justify-content:stretch;
+        }
+        .left, .right {
+            flex-grow: 1;
+            min-height: 300px;
+        }
+        .footer {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <!-- flexbox is used for layout-->
+    <!-- it is layingout in two as main(x) and cross axis(y)-->
+
+    <!-- outer container is called parent and (aka flex container) -->
+    <!-- children are called flex items-->
+
+    <div class="flex-container">
+        <div class="flex-item">Lorem ipsum dolor sit amet consectetur.</div>
+        <div class="links">
+            <div class="flex-item">Lorem ipsum dolor sit.</div>
+            <div class="flex-item">Lorem ipsum dolor sit amet.</div>
+            <div class="flex-item">lorem3</div>
+            <div class="flex-item">Lorem ipsum dolor sit amet consectetur.</div>
+        </div>
+        <div class="content">
+            <div class="flex-item left"><img src="" /></div>
+            <div class="flex-item right"><img src="https://cdn.pixabay.com/photo/2022/07/31/22/32/moon-7357007__340.jpg" /></div>
+        </div>
+        <div class="footer">
+            <div class="flex-item ">Lorem ipsum dolor sit.</div>
+            <div class="flex-item ">Lorem ipsum dolor sit amet.</div>
+            <div class="flex-item ">Lorem ipsum dolor sit.</div>
+            <div class="flex-item ">Lorem ipsum dolor sit amet.</div>
+        </div>
+    </div>
+</body>
+</html>

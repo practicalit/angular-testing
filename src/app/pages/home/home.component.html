@@ -1,0 +1,35 @@
+<div class="content"><span>
+    {{title}} app is running!
+    </span></div>
+    <form [formGroup]="contactForm">
+     
+      <p *ngIf="show">
+        <label class="data" for="anyData">Add Data</label>
+        <input type="text" id="anyData" name="anyData" formControlName="anyData">
+      </p>
+    
+     
+      <p>
+        <label for="allow">Show Input</label>
+        <input type="checkbox" (change)="handleChange()" id="showInput" name="showInput" formControlName="showInput">
+      </p>
+    
+      <p *ngIf="getShow()">
+        I am showing here.
+      </p>
+     
+      <p>
+        <button type="submit">Submits</button>
+      </p>
+    
+      <p>
+        <button type="button" (click)="getData()">Load Data</button>
+      </p>
+    
+    
+    
+      <app-introduction></app-introduction>
+    
+      <a routerLink="/">Home</a>
+    
+    </form>
