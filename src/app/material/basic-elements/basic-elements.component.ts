@@ -11,6 +11,7 @@ export class BasicElementsComponent {
 
   divClicked = "clicknone";
   divHovered = "hovernone";
+  visible: string = 'hidden';
   positionOptions: TooltipPosition[] = ['below', 'above', 'left', 'right'];
   position = new FormControl(this.positionOptions[0]);
 
@@ -20,5 +21,14 @@ export class BasicElementsComponent {
 
   onDivHover() {
     this.divHovered = "hovered";
+  }
+
+  onDiv2Hover() {
+    this.divHovered = "hovered";
+    this.visible = 'visible';
+  }
+
+  onDiv2Leave() {
+    this.visible = 'hidden';
   }
 }

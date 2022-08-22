@@ -58,6 +58,16 @@ describe('BasicElementsComponent', () => {
     ).toEqual('Tooltip text');
   });
 
+  /**
+   * This is testing the following:
+   * - Checking if the tooltip is shown or not
+   * - If the css has been changed as needed
+   * - Triggering the buitin DOM click and mouseover, mouseenter effects and then 
+   * checking accordingly 
+   * - tricky part is the css :hover one is not being listened and using the 
+   * event handler is working here.
+   * - Using click event triggered from the dom and listening for the changes.
+   */
   it('should have the tooltip text as Tooltip text', async ()=>{
     const compiled = fixture.nativeElement;
     // let div = compiled.querySelector('.tooltip .tooltiptext')
@@ -74,13 +84,20 @@ describe('BasicElementsComponent', () => {
       bubbles: true,
       cancelable: true
     });
+    div.dispatchEvent(new MouseEvent('mouseenter'), {
+      view: window,
+      bubbles: true,
+      cancelable: true
+    });
     //div.triggerEventHandler('mouseover', {});
+    component.onDiv2Hover();
     fixture.detectChanges();
-    expect(getComputedStyle(fixture.debugElement.query(By.css('.tooltip .tooltiptext'))
+    expect(getComputedStyle(fixture.debugElement.query(By.css('.tooltip .tooltiptext2'))
     .nativeElement)
       .visibility).toEqual('visible');
     expect(component.divClicked).toEqual('clicked');
     expect(component.divHovered).toEqual('hovered');
+    expect(component.visible).toEqual('visible');
     expect(
       fixture.debugElement.query(By.css('.tooltip .tooltiptext'))
       .nativeElement

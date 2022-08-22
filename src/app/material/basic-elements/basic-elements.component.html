@@ -8,8 +8,12 @@
       [matTooltipClass]="position.value"
       >
     </button>
-    <div class="tooltip" (click)="onDivClick()" (mouseover)="onDivHover()">basic
+    <div class="tooltip" (click)="onDivClick()" (mouseover)="onDivHover()">The basic
         <span class="tooltiptext">Tooltip text</span>
+      </div>
+      <div></div>
+      <div class="tooltip" (click)="onDiv2Click()" (mouseleave)="onDiv2Leave()" (mouseenter)="onDiv2Hover()">Second on hover
+        <span [ngStyle]="{'visibility': visible}" class="tooltiptext2">Using code</span>
       </div>
       <button mat-button color="primary">Primary</button>
       <button mat-button color="accent">Accent</button>

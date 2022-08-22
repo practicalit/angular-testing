@@ -52,6 +52,23 @@ section {
     border: 1px solid black;
     box-shadow: 0pc;
   }
+
+  .tooltip .tooltiptext2 {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(255, 254, 254);
+    color: #000;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+    border: 1px solid rgb(255, 3, 3);
+    box-shadow: 0pc;
+  }
   
   .tooltip .tooltiptext::after {
     content: "";
