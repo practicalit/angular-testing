@@ -1,0 +1,26 @@
+<div layout="row" layout-xs="column">
+    <div flex>
+      I'm above on mobile, and to the left on larger devices.
+    </div>
+    <div flex>
+      I'm below on mobile, and to the right on larger devices.
+    </div>
+  </div>
+
+  <section>
+    <div class="example-label">Basic</div>
+    <div class="example-button-row">
+      <button mat-button (click)="callTodoList()">Basic</button>
+      <button mat-button color="primary">Primary</button>
+      <button mat-button color="accent">Accent</button>
+      <button mat-button color="warn">Warn</button>
+      <button mat-button disabled>Disabled</button>
+      <a mat-button href="https://www.google.com/" target="_blank">Link</a>
+    </div>
+  </section>
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile *ngIf="post">Id: {{post.id}}</mat-grid-tile>
+    <mat-grid-tile *ngIf="post">Title: {{post.title}}</mat-grid-tile>
+    <mat-grid-tile *ngIf="post">Completed: <input type="checkbox" [checked]="post.completed" /></mat-grid-tile>
+    <mat-grid-tile *ngIf="post">4</mat-grid-tile>
+  </mat-grid-list>

@@ -19,6 +19,10 @@ export class BasicElementsComponent {
     this.divClicked = "clicked";
   }
 
+  onDiv2Click() {
+    this.divClicked = "clicked";
+  }
+
   onDivHover() {
     this.divHovered = "hovered";
   }
