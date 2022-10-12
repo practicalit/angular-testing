@@ -25,3 +25,23 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Notes
+
+### CUSTOM_ELEMENT_SCHEMA
+Adding schemas: [CUSTOM_ELEMENT_SCHEMA] in the TestBed.configureTestModule tells
+angular to forget anything that is not in the given module.
+This is applicable if the component under the test is using component that is 
+in the other module and feels foreign about it.
+When this happens, one way is to add the component in question to the declaration
+array or just to add the schemas with the above array value.
+
+### NO_ERRORS_SCHEMA
+Adding this in schemas: [NO_ERRORS_SCHEMA] is basically saying forget about all
+the things that are coming from the template and move on.
+
+### Avoid adding whole module in the test's import 
+Sometimes, adding the import: [SomeRealAppModule] could solve some of the issues
+specially when the component includes other component, but that is a bad idea 
+that it can take longer to load all the modules and can make the whole thing 
+slow since it is called on every call.

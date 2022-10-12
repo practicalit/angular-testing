@@ -20,7 +20,7 @@
   </section>
   <mat-grid-list cols="2" rowHeight="2:1">
     <mat-grid-tile *ngIf="post">Id: {{post.id}}</mat-grid-tile>
-    <mat-grid-tile *ngIf="post">Title: {{post.title}}</mat-grid-tile>
+    <mat-grid-tile class="title" *ngIf="post">Title: {{post.title}}</mat-grid-tile>
     <mat-grid-tile *ngIf="post">Completed: <input type="checkbox" [checked]="post.completed" /></mat-grid-tile>
     <mat-grid-tile *ngIf="post">4</mat-grid-tile>
   </mat-grid-list>
